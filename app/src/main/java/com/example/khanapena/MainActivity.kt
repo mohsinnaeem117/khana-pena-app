@@ -83,8 +83,8 @@ class MainActivity : AppCompatActivity() {
         spinner.onItemSelectedListener = spinnerItemSelectedListener
 
         manager = RequestManager(this)
-//        manager.getRandomRecipes(randomRecipeResponseListener)
-//        dialog.show()
+        manager.getRandomRecipes(randomRecipeResponseListener, emptyList())
+        dialog.show()
 
         val searchView = findViewById<SearchView>(R.id.searchView_home)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{

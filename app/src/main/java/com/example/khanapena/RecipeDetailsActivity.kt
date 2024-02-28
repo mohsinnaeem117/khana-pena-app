@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -57,7 +58,7 @@ class RecipeDetailsActivity : AppCompatActivity() {
             if (response != null){
                 textView_meal_name.text = response.title
                 textView_meal_source.text = response.sourceName
-                textView_meal_summary.text = response.summary
+                textView_meal_summary.text = Html.fromHtml(response.summary)
                 Picasso.get().load(response.image).into(imageView_meal_image)
 
                 recycler_meal_ingredients.setHasFixedSize(true)
